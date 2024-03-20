@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Node Fetch Example</title>
+</head>
+<body>
+    <button id="fetchButton">Fetch Data</button>
+    <script>
+        document.getElementById('fetchButton').addEventListener('click', function() {
+            fetch('/testit')
+                .then(response => response.json())
+                .then(data => alert('Status Code: ' + data.statusCode))
+                .catch(error => console.error('Error:', error));
+        });
+    </script>
+</body>
+</html>

@@ -1,29 +1,26 @@
 import { Component } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http';
-import { DataService } from './data.service';
 
 @Component({
   selector: 'app-root',
-  template: `
-    <button (click)="testit()">Test It</button>
-  `,
-  imports: [HttpClientModule], // Import HttpClientModule directly
-  providers: [DataService], // Provide the DataService
-  standalone: true, // Mark the component as standalone
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  constructor(private dataService: DataService) {}
+  selectedClient: string | null = null;
 
-  testit() {
-    this.dataService.testit().subscribe(
-      response => {
-        console.log(response);
-        // Convert and show the response as a JSON string
-        alert(JSON.stringify(response));
-      },
-      error => {
-        console.error('Error:', error);
-      }
-    );
+  selectClient(clientId: string) {
+    alert(clientId)
+    if (this.selectedClient === clientId) {
+      return; // If already selected, do nothing
+    }
+
+    this.selectedClient = clientId;
+
+    // Reset button styles
+    const otherClientId = clientId === 'Client-1' ? 'Client-2' : 'Client-1';
+    const otherButton = document.getElementById(otherClientId) as HTMLButtonElement;
+    if (otherButton) {
+      otherButton.classList.remove('selected');
+    }
   }
 }

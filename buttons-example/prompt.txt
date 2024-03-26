@@ -1,0 +1,15 @@
+Create a simple angular application where the app.component.html has a header. 
+In the header there are two buttons, one is left of center and the other is right of center.
+The width of each button is 1/10th the width of the web page.
+Each button is equidistant from the center
+
+The labels on the buttons are "Client-1" and "Client-2"
+The button ids are "Client-1" and "Client-2"
+The default color of the buttons are black border, white background, black text. 
+
+If a button is clicked the following behaviors will occur:
+1. The button will call the selectClient() method in the app.component.ts file, using the button id as the method argument. 
+2. The selectClient() function takes an argument Function on submit will do the following.
+   a. The selectClient() will change the color of the button passed in To a background of blue, a border of blue, and white text. 
+   b. The other button will be reset to the default colors.
+

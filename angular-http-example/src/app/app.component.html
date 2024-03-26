@@ -179,6 +179,11 @@
 
 <main class="main">
   <div class="content">
+    <div class="header">
+      <button id="Client-1" (click)="selectClient('Client-1')" [ngClass]="{'selected': selectedClient === 'Client-1'}">Client-1</button>
+      <button id="Client-2" (click)="selectClient('Client-2')" [ngClass]="{'selected': selectedClient === 'Client-2'}">Client-2</button>
+    </div>
+    
     <div class="left-side">
       <svg
         xmlns="http://www.w3.org/2000/svg"
